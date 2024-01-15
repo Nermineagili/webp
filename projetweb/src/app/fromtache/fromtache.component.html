@@ -1,0 +1,38 @@
+<!-- <div class="taches">
+    <div class="tache">
+      <button (click)="modifierTache" style="display: flex; justify-content: center; align-items: center;">Modifier</button>
+      <button (click)="supprimerTache" style="display: flex; justify-content: center; align-items: center;">Supprimer</button>
+    </div>
+  </div> -->
+  
+ 
+  <div class="row mt 5">
+    <h2>Créer une nouvelle tâche</h2>
+        <form (submit)="creerTache()">
+      <label for="titre">Titre:</label>
+      <input type="text" id="titre" [(ngModel)]="taskSchema.titre" placeholder="Titre" >
+  
+      <label for="description">Description:</label>
+      <input type="text" id="description" [(ngModel)]="taskSchema.description" placeholder="Description" >
+  
+      <label for="dateFin">Date de fin:</label>
+      <input type="date" id="dateFin" [(ngModel)]="taskSchema.dateFin" >
+  
+      <label for="proprietaire">Propriétaire:</label>
+      <input type="text" id="proprietaire" [(ngModel)]="taskSchema.proprietaire" placeholder="Propriétaire" >
+  
+      <label for="priorite">Priorité:</label>
+      <input type="text" id="priorite" [(ngModel)]="taskSchema.priorite" placeholder="Priorité" >
+  
+      <label for="etat">État:</label>
+      <input type="text" id="etat" [(ngModel)]="taskSchema.etat" placeholder="État" >
+  
+      <label for="categorie">Catégorie:</label>
+      <input type="text" id="categorie" [(ngModel)]="taskSchema.categorie" placeholder="Catégorie" >
+  
+      <button type="submit">Créer</button>
+    </form>
+    </div>
+  
+  
+
