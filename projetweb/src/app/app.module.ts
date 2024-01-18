@@ -8,11 +8,19 @@ import { LoginsignupComponent } from './loginsignup/loginsignup.component';
 import { FormsModule } from '@angular/forms';
 import { FromtacheComponent } from './fromtache/fromtache.component';
 import { HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { TableauComponent } from './tableau/tableau.component';
+import { HeaderComponent } from './header/header.component';
+import { UpdateComponent } from './update/update.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginsignupComponent,
-    FromtacheComponent
+    FromtacheComponent,
+    HomeComponent,
+    TableauComponent,
+    HeaderComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

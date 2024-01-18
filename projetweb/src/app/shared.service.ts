@@ -17,4 +17,20 @@ export class SharedService {
  createTask(taskSchema : any){
     return this.http.post(this.url + '/task/createTask' , taskSchema)
   }
+  getTask(){
+    return this.http.get(this.url + '/task/getTask')
+  }
+  // updateTask(id: any, taskSchema: any) {
+  //   return this.http.put(`${this.url}/task/updateTask/${id}`, taskSchema);
+  // }
+  
+  
+// Service Angular
+// ...
+
+getTaskById(id: any) {
+  return this.http.get(this.url + '/task/getTaskById/' + id);
+}
+
+
 }

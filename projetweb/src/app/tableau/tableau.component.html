@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="tableau.component.css">
+</head>
+<body>
+
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Date de fin </th>
+                <th>Propriétaire</th>
+                <th>Priorité</th>
+                <th>Etat</th>
+                <th>Catégorie</th>
+                <th>participants</th>
+                <th>comments</th>
+                <th>Actions</th> <!-- Nouvelle colonne pour les boutons -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Exemple de ligne avec des boutons -->
+            <tr *ngFor="let task of taskSchema">
+                <!-- <td>{{task._id}}</td> -->
+                <td>{{task.titre}}</td>
+                <td>{{task.description}}</td>
+                <td>{{task.dateFin}}</td>
+                <td>{{task.Proprietaire}}</td>
+                <td>{{task.Priorite}}</td>
+                <td>{{task.Etat}}</td>
+                <td>{{task.categorie}}</td>
+                <td>{{task.participants}}</td>
+                <td>{{task.comments}}</td>
+                <td>
+                    <button [routerLink]="['/update', task._id]" class="action-button" >Update Task</button>
+                    <button class="action-button">Delete Task</button>
+                    <button class="action-button">Assign Participant</button>
+                    <button class="action-button">Add Comment</button>
+                </td>
+            </tr>
+            <!-- Ajoutez autant de lignes que nécessaire -->
+        </tbody>
+    </table>
+
+</body>
+</html>
+

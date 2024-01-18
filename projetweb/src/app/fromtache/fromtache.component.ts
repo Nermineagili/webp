@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SharedService } from '../shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fromtache',
@@ -7,7 +8,7 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./fromtache.component.css']
 })
 export class FromtacheComponent {
-constructor(public shared : SharedService){}
+constructor(private router : Router,public shared : SharedService){}
 taskSchema : any = {
     titre :'',
     description : '',
@@ -20,17 +21,18 @@ taskSchema : any = {
 
 showTaskForm: boolean = false;
 
-toggleTaskForm(): void {
-  this.showTaskForm = !this.showTaskForm;
-}
+// toggleTaskForm(): void {
+//   this.showTaskForm = !this.showTaskForm;
+// }
   creerTache(){
    this.shared.createTask(this.taskSchema).subscribe(
     res=>{
       console.log("task created");
-      
+      this.router.navigate(['/home'])
     },
     err=>{
       console.log("task not created ");
+      console.log(err);
       
     }
    )
@@ -38,11 +40,5 @@ toggleTaskForm(): void {
 
   
 
-  modifierTache(index: number) {
-    console.log('Modifier la tâche : ', index);
-  }
-
-  supprimerTache(index: number) {
-    console.log('Supprimer la tâche : ', index);
-  }
+  
 }

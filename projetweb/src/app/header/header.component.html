@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add your CSS links here -->
+  <link rel="stylesheet" href="header.component.css">
+</head>
+
+
+<body>
+  <header class="header-area overlay">
+    <nav class="navbar navbar-expand-md navbar-dark">
+      <div class="container">
+        <a href="#" class="navbar-brand"></a>
+
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
+          <span class="menu-icon-bar"></span>
+          <span class="menu-icon-bar"></span>
+          <span class="menu-icon-bar"></span>
+        </button>
+
+        <div id="main-nav" class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+           
+            <li><a routerLink="home" class="nav-item nav-link active">Home</a></li>
+            <li><a routerLink="fromtache" class="nav-item nav-link">Create task</a></li>
+            <li><a routerLink="/loginsignup" class="nav-item nav-link">Log out</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+</header>
+    <!-- <div class="banner">
+      <div class="container">
+        
+      </div>
+    </div> -->
+
+  <!-- Add your JavaScript code here -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    jQuery(function ($) {
+      $(window).on('scroll', function () {
+        if ($(this).scrollTop() >= 200) {
+          $('.navbar').addClass('fixed-top');
+        } else if ($(this).scrollTop() == 0) {
+          $('.navbar').removeClass('fixed-top');
+        }
+      });
+
+      function adjustNav() {
+        var winWidth = $(window).width(),
+          dropdown = $('.dropdown'),
+          dropdownMenu = $('.dropdown-menu');
+
+        if (winWidth >= 768) {
+          dropdown.on('mouseenter', function () {
+            $(this).addClass('show')
+              .children(dropdownMenu).addClass('show');
+          });
+
+          dropdown.on('mouseleave', function () {
+            $(this).removeClass('show')
+              .children(dropdownMenu).removeClass('show');
+          });
+        } else {
+          dropdown.off('mouseenter mouseleave');
+        }
+      }
+
+      $(window).on('resize', adjustNav);
+
+      adjustNav();
+    });
+  </script>
+
+</body>
+
+</html>
+
+
+  
+  

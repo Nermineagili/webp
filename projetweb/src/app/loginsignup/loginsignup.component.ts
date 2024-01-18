@@ -19,12 +19,16 @@ export class LoginsignupComponent {
     password: ''
   }
 
-  constructor( public shared : SharedService) {}
+  constructor( private router: Router,public shared : SharedService) {}
   signUp(){
       this.shared.signUp(this.user).subscribe(
           res=>{
             console.log("niceeuuuu");
-            
+            this.user = {
+              name: '',
+              email: '',
+              password: ''
+            }
           },
           err=>{
             console.log("fuckk");
@@ -36,7 +40,7 @@ export class LoginsignupComponent {
       this.shared.login(this.userLog).subscribe(
           res=>{
             console.log("niceeuuuu");
-            
+            this.router.navigate(['./home']);
           },
           err=>{
             console.log("fuckk");
@@ -44,12 +48,7 @@ export class LoginsignupComponent {
           }
       )
     }
-  // ngOnInit(): void {
-  //   const localData = localStorage.getItem('signupUsers');
-  //   if (localData != null) {
-  //     this.signupUsers = JSON.parse(localData);
-  //   }
-  // }
+  
 
   // onSignUp() {
   //   this.signupUsers.push(this.signupObj);

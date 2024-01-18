@@ -1,14 +1,6 @@
-<!-- <div class="taches">
-    <div class="tache">
-      <button (click)="modifierTache" style="display: flex; justify-content: center; align-items: center;">Modifier</button>
-      <button (click)="supprimerTache" style="display: flex; justify-content: center; align-items: center;">Supprimer</button>
-    </div>
-  </div> -->
-  
- 
-  <div class="row mt 5">
+<div class="row mt 5">
     <h2>Créer une nouvelle tâche</h2>
-        <form (submit)="creerTache()" >
+        <form  >
       <label for="titre">Titre:</label>
       <input type="text" name="titre" [(ngModel)]="taskSchema.titre" placeholder="Titre" >
   
@@ -30,9 +22,6 @@
       <label for="categorie">Catégorie:</label>
       <input type="text" name="categorie" [(ngModel)]="taskSchema.categorie" placeholder="Catégorie" >
   
-      <button type="submit">Créer</button>
+      <button (click)="update()" type="submit">Modifier</button>
     </form>
     </div>
-  
-  
-
