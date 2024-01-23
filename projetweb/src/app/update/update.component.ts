@@ -1,4 +1,5 @@
 // update.component.ts
+import { Router } from '@angular/router';
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -14,25 +15,26 @@ export class UpdateComponent implements OnInit {
   taskSchema: any;
   id: any;
 
-  constructor(private act: ActivatedRoute, private _shared: SharedService) {}
+  constructor(private router : Router ,private act: ActivatedRoute, private shared: SharedService) {}
 
-  // update() {
-  //   this._shared.updateTask(this.id, this.taskSchema).subscribe(
-  //     res => {
-  //       console.log("Task updated");
-  //       // Faire quelque chose après la mise à jour, par exemple, rediriger vers une autre page.
-  //     },
-  //     err => {
-  //       console.log("Task not updated ");
-  //       console.log(err);
-  //     }
-  //   );
-  // }
-update(){}
+  update() {
+    this.shared.updateTask(this.id, this.taskSchema).subscribe(
+      res => {
+        console.log("Task updated");
+        // Faire quelque chose après la mise à jour, par exemple, rediriger vers une autre page.
+        this.router.navigate(['/home']);
+      },
+      err => {
+        console.log("Task not updated ");
+        console.log(err);
+      }
+    );
+  }
+
 
   ngOnInit(): void {
     this.id = this.act.snapshot.paramMap.get('id');
-    this._shared.getTaskById(this.id)
+    this.shared.getTaskById(this.id)
       .subscribe(
         res => {
           this.taskSchema = res;

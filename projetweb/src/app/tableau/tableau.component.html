@@ -35,12 +35,18 @@
                 <td>{{task.Etat}}</td>
                 <td>{{task.categorie}}</td>
                 <td>{{task.participants}}</td>
-                <td>{{task.comments}}</td>
+                <td>
+                    <div *ngFor="let comment of task.comments">
+                        
+                        {{ comment.commentaire }}
+                    </div>
+                </td>
+                
                 <td>
                     <button [routerLink]="['/update', task._id]" class="action-button" >Update Task</button>
-                    <button class="action-button">Delete Task</button>
-                    <button class="action-button">Assign Participant</button>
-                    <button class="action-button">Add Comment</button>
+                    <button (click)="deleteTask(task._id)" class="action-button">Delete Task</button>
+                    <!-- <button (click)="assignParticipant(['/assignParticipant'] ,user._id)" class="action-button">Assign Participant</button> -->
+                    <button [routerLink] = "['/addComment' ,task._id]" class="action-button">Add Comment</button>
                 </td>
             </tr>
             <!-- Ajoutez autant de lignes que nécessaire -->
@@ -50,3 +56,11 @@
 </body>
 </html>
 
+ <!-- <td>
+                    <select [(ngModel)]="selectedParticipantId">
+                        <option *ngFor="let participant of participants" [value]="participant._id">
+                            {{ participant.name }}
+                        </option>
+                    </select>
+                    <button (click)="assignParticipant(task._id, user._id)" class="action-button">Assign Participant</button>
+                </td> -->

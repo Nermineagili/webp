@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HeaderComponent {
   route: ActivatedRoute | null | undefined;
-  constructor(private router: Router) {}
+  constructor(private router: Router , public authService: AuthService) {}
 
   onCreateTask() {
     // Perform create task logic
@@ -21,3 +22,10 @@ export class HeaderComponent {
     this.router.navigate(['/loginsignup']);
   }
 }
+// logout() {
+//   this.authService.logout();
+// }
+//logout() {
+  //     this.authService.logout(); // Assurez-vous que cette méthode redirige l'utilisateur après la déconnexion
+  //     this.router.navigate(['/login']); // Redirige l'utilisateur vers la page de connexion (ajustez le chemin selon vos besoins)
+  //   }

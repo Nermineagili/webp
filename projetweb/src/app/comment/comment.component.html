@@ -1,0 +1,11 @@
+<form>
+    <label for="auteur">Auteur:</label>
+    <input type="text" name="auteur" [(ngModel)]="comments.auteur" placeholder="Auteur">
+    <label for="commentaire">Commentaire:</label>
+    <input type="text" name="commentaire" [(ngModel)]="comments.commentaire" placeholder="Commentaire">
+  
+    <!-- You can add more fields like 'hour' and 'date' if needed -->
+  
+    <button (click)="addComment()" type="button" class="btn btn-primary">Add Comment</button>
+  </form>
+  

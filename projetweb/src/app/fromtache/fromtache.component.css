@@ -44,7 +44,7 @@ label {
 
 input {
   width: 60%;
-  height: 20px;
+  height: 40px; /* Augmentation de la hauteur */
   background: #e0dede;
   margin: 5px auto;
   padding: 10px;

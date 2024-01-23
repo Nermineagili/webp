@@ -12,6 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { TableauComponent } from './tableau/tableau.component';
 import { HeaderComponent } from './header/header.component';
 import { UpdateComponent } from './update/update.component';
+import { CommentComponent } from './comment/comment.component';
+
+// import { ParticipantComponent } from './participant/participant.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,9 @@ import { UpdateComponent } from './update/update.component';
     HomeComponent,
     TableauComponent,
     HeaderComponent,
-    UpdateComponent
+    UpdateComponent,
+    CommentComponent
+    // ParticipantComponent
   ],
   imports: [
     BrowserModule,
